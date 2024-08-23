@@ -1,0 +1,9 @@
+# Django
+*.pyc
+__pycache__/
+
+# React
+node_modules/
+
+# Virtual Environment
+venv/
