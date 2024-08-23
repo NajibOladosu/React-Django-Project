@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
+import profile from './about-visual.png'
+import logo from './logo.png'
+import favicon from './favicon.png'
 
 
 function App() {
+
+    const HomePage = () => {
+        useEffect(() => {
+          document.title = "Najib Oladosu's Project";
+        }, []);
+    }
+
     return(
         <>
             <title>Najib Oladosu's Project</title>
@@ -13,10 +23,10 @@ function App() {
             <meta name="keywords" content="global, template, html, sass, jquery" />
             <meta name="author" content="Najib Oladosu" />
             <link rel="stylesheet" href="index.css" />
-            <link rel="icon" type="image/x-icon" href="favicon.webp" />
+            <link rel="icon" type="image/x-icon" href={favicon} />
             <header className="header">
                 <a className="header--logo" href="/">
-                <img src="logo.png" alt="Najib Oladosu" />
+                <img src={logo} alt="Najib Oladosu" />
                 </a>
                 <a href="http://najib.mypressonline.com">
                 <button className="header--cta cta">Hire Najib</button>
@@ -59,7 +69,7 @@ function App() {
                     </button>
                 </a>
                 </div>
-                <img src="about-visual.png" />
+                <img src={profile}/>
             </div>
         </>
 
