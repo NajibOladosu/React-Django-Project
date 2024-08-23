@@ -1,0 +1,159 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat-Black.eot");
+  src: local("☺"), url("Montserrat-Black.woff") format("woff"), url("Montserrat-Black.ttf") format("truetype"), url("Montserrat-Black.svg") format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
+html {
+  background-color: #0c0c0c;
+  color: #fff;
+  overflow: hidden;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: auto;
+}
+
+body {
+  background-color: #0c0c0c;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  margin: 0 auto;
+}
+
+.header--logo {
+  display: inline-flex;
+  height: 70px;
+  width: 10em;
+}
+
+.header--cta {
+  display: inline-flex;
+  line-height: 30px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #0f33ff;
+  border: none;
+}
+
+.intro {
+  position: relative;
+  display: flex;
+  width: 900px;
+  max-width: 75%;
+  height: 100%;
+  flex-direction: row; /* Places the banner and image side by side */
+  align-items: center;
+  justify-content: space-between;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.intro--banner {
+  position: relative;
+  height: 600px;
+}
+
+.intro::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 110px;
+  left: -15px;
+  right: 0;
+  height: 2px;
+  background-color: #282828;
+}
+
+.intro::after {
+  content: "";
+  position: absolute;
+  bottom: 108px;
+  left: 0;
+  width: 30px;
+  height: 4px;
+  background-color: #0f33ff;
+}
+
+.intro--banner h1 {
+  position: relative;
+  font-size: 68px;
+  font-weight: 900;
+  line-height: 1;
+  z-index: 1;
+}
+
+.intro--banner {
+  position: relative;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  line-height: 1;
+  z-index: 1;
+}
+
+.intro--banner button {
+  position: relative;
+  color: #fff;
+  padding: 5px 17px 5px 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+}
+
+.intro--banner button .btn-background {
+  position: absolute;
+  top: 0;
+  left: 23px;
+  right: 0;
+  height: 100%;
+  background-color: #0f33ff;
+  z-index: -1;
+  transition: left 0.2s ease-in-out;
+}
+
+.intro--banner button:hover .btn-background {
+  left: 0;
+}
+
+.intro--banner button:focus {
+  outline: none;
+}
+
+.intro--banner button svg {
+  position: relative;
+  left: 5px;
+  width: 15px;
+  fill: #fff;
+}
+
+.intro--banner img {
+  position: absolute;
+  bottom: 21px;
+  right: -12px;
+}/*# sourceMappingURL=index.css.map */
