@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.urls import path
 from api import views
+from django.urls import path
+from api.views import get_weather
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('api/get-weather/', get_weather, name='get_weather'),
 ]

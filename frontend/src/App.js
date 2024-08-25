@@ -13,6 +13,28 @@ function App() {
         }, []);
     }
 
+    const [weather, setWeather] = useState(null);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        // Get user's current location
+        if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            const { latitude, longitude } = position.coords;
+
+            // Fetch weather data from the backend using the coordinates
+            fetch(`http://127.0.0.1:8000/api/get-weather/?lat=${latitude}&lon=${longitude}`)
+            .then(response => response.json())
+            .then(data => setWeather(data))
+            .catch(err => setError(err.message));
+        }, (error) => {
+            setError('Unable to retrieve your location');
+        });
+        } else {
+        setError('Geolocation is not supported by your browser');
+        }
+    }, []);
+
     return(
         <>
             <title>Najib Oladosu's Project</title>
@@ -31,6 +53,19 @@ function App() {
                 <a href="http://najib.mypressonline.com">
                 <button className="header--cta cta">Hire Najib</button>
                 </a>
+                <div className='weather'>
+                    <h3>Weather Information</h3>
+                    {error && <p>Error: {error}</p>}
+                    {weather ? (
+                        <div>
+                            <p>Location: {weather.name}</p>
+                            <p>Temperature: {weather.main.temp} °C</p>
+                            <p>Weather: {weather.weather[0].description}</p>
+                        </div>
+                    ) : (
+                        <p>Loading...</p>
+                    )}
+                </div>
             </header>
             <div className="intro">
                 <div className="intro--banner">
